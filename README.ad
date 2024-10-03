@@ -1,0 +1,14 @@
+create database gx_day16 
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'gx_day16',  # 
+        'USER': 'root',
+        'PASSWORD': 'root123',
+        'HOST': '127.0.0.1',  # 
+        'PORT': 3306,
+    }
+}
+
+
