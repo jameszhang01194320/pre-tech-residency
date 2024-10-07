@@ -6,7 +6,6 @@ from app01.utils.form import UserModelForm, PrettyModelForm, PrettyEditModelForm
 
 
 def pretty_list(request):
-    """ 靓号列表 """
 
     data_dict = {}
     search_data = request.GET.get('q', "")
@@ -20,14 +19,13 @@ def pretty_list(request):
     context = {
         "search_data": search_data,
 
-        "queryset": page_object.page_queryset,  # 分完页的数据
-        "page_string": page_object.html()  # 页码
+        "queryset": page_object.page_queryset,  # 
+        "page_string": page_object.html()  #
     }
     return render(request, 'pretty_list.html', context)
 
 
 def pretty_add(request):
-    """ 添加靓号 """
     if request.method == "GET":
         form = PrettyModelForm()
         return render(request, 'pretty_add.html', {"form": form})
@@ -39,7 +37,7 @@ def pretty_add(request):
 
 
 def pretty_edit(request, nid):
-    """ 编辑靓号 """
+ 
     row_object = models.PrettyNum.objects.filter(id=nid).first()
 
     if request.method == "GET":

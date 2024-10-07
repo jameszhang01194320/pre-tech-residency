@@ -46,21 +46,21 @@ class PrettyEditModelForm(BootStrapModelForm):
     # mobile = forms.CharField(disabled=True, label="mobile")
     mobile = forms.CharField(
         label="mobile",
-        validators=[RegexValidator(r'^1[3-9]\d{9}$', 'mobile格式错误'), ],
+        validators=[RegexValidator(r'^1[3-9]\d{9}$', 'mobile wrong'), ],
     )
 
     class Meta:
         model = models.PrettyNum
         fields = ['mobile', 'price', 'level', 'status']
 
-    # 验证：方式2
+    # 2
     def clean_mobile(self):
-        # 当前编辑的哪一行的ID
+        # 
         # print(self.instance.pk)
         txt_mobile = self.cleaned_data["mobile"]
         exists = models.PrettyNum.objects.exclude(id=self.instance.pk).filter(mobile=txt_mobile).exists()
         if exists:
-            raise ValidationError("mobile已存在")
+            raise ValidationError("mobile exists")
 
-        # 验证通过，用户输入的值返回
+        # 
         return txt_mobile

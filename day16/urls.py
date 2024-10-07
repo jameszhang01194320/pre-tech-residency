@@ -21,20 +21,20 @@ from app01.views import depart, user, pretty
 urlpatterns = [
     # path('admin/', admin.site.urls),
 
-    # depart管理
+    # 
     path('depart/list/', depart.depart_list),
     path('depart/add/', depart.depart_add),
     path('depart/delete/', depart.depart_delete),
     path('depart/<int:nid>/edit/', depart.depart_edit),
 
-    # 用户管理
+    # 
     path('user/list/', user.user_list),
     path('user/add/', user.user_add),
     path('user/model/form/add/', user.user_model_form_add),
     path('user/<int:nid>/edit/', user.user_edit),
     path('user/<int:nid>/delete/', user.user_delete),
 
-    # 靓号管理
+    # 
     path('pretty/list/', pretty.pretty_list),
     path('pretty/add/', pretty.pretty_add),
     path('pretty/<int:nid>/edit/', pretty.pretty_edit),

@@ -28,6 +28,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='prettynum',
             name='status',
-            field=models.SmallIntegerField(choices=[(1, '已占用'), (2, '未使用')], default=2, verbose_name='status'),
+            field=models.SmallIntegerField(choices=[(1, 'used'), (2, 'unuse')], default=2, verbose_name='status'),
         ),
     ]

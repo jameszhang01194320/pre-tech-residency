@@ -46,7 +46,7 @@ class PrettyNum(models.Model):
     level = models.SmallIntegerField(verbose_name="rank", choices=level_choices, default=1)
 
     status_choices = (
-        (1, "已占用"),
-        (2, "未使用")
+        (1, "used"),
+        (2, "unuse")
     )
     status = models.SmallIntegerField(verbose_name="status", choices=status_choices, default=2)
